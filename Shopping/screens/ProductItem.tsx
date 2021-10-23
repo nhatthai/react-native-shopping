@@ -12,12 +12,25 @@ import {ADD_FAVORITE_LIST, ADD_TO_CART, REMOVE_FAVORITE_LIST} from '../hooks/pro
 import Separator from '../components/Separator';
 
 export default function ProductItem(props: any) {
-  const { dispatch } = useContext(ProductContext);
+  const { state, dispatch } = useContext(ProductContext);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [favoriteColor, setFavoriteColor] = useState("");
 
   useEffect(() => {
-    setIsFavorite(props.item.isFavorite);
-  }, [props.item.isFavorite])
+    if (state.isDarkMode) {
+      if (props.item.isFavorite) {
+        setFavoriteColor("red");
+      } else {
+        setFavoriteColor("white");
+      }
+    } else {
+      if (props.item.isFavorite) {
+        setFavoriteColor("red");
+      } else {
+        setFavoriteColor("black");
+      }
+    }
+  }, [state.isDarkMode, props.item.isFavorite])
 
   function addItemToCart(item: any) {
     dispatch({ type: ADD_TO_CART, payload: item });
@@ -25,11 +38,9 @@ export default function ProductItem(props: any) {
 
   function addOrRemoveItemToFavorite(item: any) {
     if (!isFavorite) {
-      setIsFavorite(true);
       item.isFavorite = true;
       dispatch({ type: ADD_FAVORITE_LIST, payload: item });
     } else {
-      setIsFavorite(false);
       item.isFavorite = false;
       dispatch({ type: REMOVE_FAVORITE_LIST, payload: item });
     }
@@ -44,7 +55,7 @@ export default function ProductItem(props: any) {
         <View style={styles.itemMetaContainer}>
           <View style={styles.buttonFavorite}>
             <TouchableOpacity onPress={() => addOrRemoveItemToFavorite(props.item)}>
-              <MaterialIcons name="favorite-border" size={20} color={(isFavorite)? "red": "black"} style={styles.favorite}/>
+              <MaterialIcons name="favorite-border" size={20} color={favoriteColor} style={styles.favorite}/>
             </TouchableOpacity>
           </View>
 

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   Image,
   StyleSheet
 } from 'react-native';
+import { Text } from '../components/Themed';
 import Separator from '../components/Separator';
 import ProductContext from '../hooks/productContext';
 import {REMOVE_FROM_CART} from '../hooks/productReducer';

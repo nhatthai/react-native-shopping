@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Avatar from './Avatar';
+import { Text, View } from '../components/Themed';
 
 export default function ProfileInformation({data}){
   return(
@@ -34,7 +35,8 @@ const profileInfoStyles=StyleSheet.create({
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    marginTop: 25
   },
   username:{
     fontSize:20,
@@ -47,8 +49,7 @@ const profileInfoStyles=StyleSheet.create({
   bio:{
     paddingHorizontal:20,
     textAlign:'center',
-    fontSize:14,
-    color:'#4a4b46'
+    fontSize:14
   },
   details:{
     paddingVertical:20,
@@ -56,7 +57,6 @@ const profileInfoStyles=StyleSheet.create({
     justifyContent:'space-between'
   },
   detailsHeading:{
-    color:'#0f0f0f',
     fontSize:16,
     fontWeight:'700'
   }

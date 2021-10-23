@@ -1,6 +1,7 @@
 import React  from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import ProfileInformation from './ProfileInformation';
+import { View } from '../components/Themed';
 
 const data = {
   userid: 566,
@@ -20,15 +21,14 @@ const data = {
 export default function ProfileScreen() {
 
   return(
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <ProfileInformation data={data}/>
-    </ScrollView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical:30,
-    marginHorizontal:20
+    flex: 1,
   }
 })

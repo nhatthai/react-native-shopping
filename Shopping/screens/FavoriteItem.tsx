@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import {
-  View,
-  Text,
   TouchableOpacity,
   Image,
   StyleSheet
 } from 'react-native';
+import { View, Text } from '../components/Themed';
 import ProductContext from '../hooks/productContext';
 import {REMOVE_FAVORITE_LIST, ADD_TO_CART} from '../hooks/productReducer';
 import Separator from '../components/Separator';
