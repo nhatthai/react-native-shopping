@@ -1,8 +1,4 @@
-/**
- * If you are not familiar with React Navigation, refer to the "Fundamentals" guide:
- * https://reactnavigation.org/docs/getting-started
- *
- */
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -11,10 +7,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Pressable } from 'react-native';
 import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import useColorScheme from '../hooks/useColorScheme';
+import NotFoundScreen from '../screens/NotFoundScreen';
 import ProductListScreen from '../screens/ProductListScreen';
 import CartScreen from '../screens/CartScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
@@ -113,7 +109,7 @@ function BottomTabNavigator() {
         component={AccountScreen}
         options={{
           title: 'Account',
-          tabBarIcon: ({color}) => <Fontisto name="player-settings" size={20} color={color} />
+          tabBarIcon: ({color}) => <MaterialCommunityIcons name="account-circle-outline" size={20} color={color} />
         }}
       />
     </BottomTab.Navigator>

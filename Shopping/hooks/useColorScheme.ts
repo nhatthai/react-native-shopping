@@ -18,5 +18,4 @@ export default function useColorScheme(): NonNullable<ColorSchemeName> {
   })
 
   return color as NonNullable<ColorSchemeName>;
-  // return _useColorScheme() as NonNullable<ColorSchemeName>;
 }
